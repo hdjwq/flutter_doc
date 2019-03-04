@@ -9,7 +9,7 @@ class HomeIndex extends StatelessWidget{
     // TODO: implement build
     return new Bloc<HomeBloc>(
       child: new Home(),
-      mapData:{'user':new HomeBloc()},
+      mapData:{'user':new HomeBloc()},//home页面bloc
     );
   }
 }

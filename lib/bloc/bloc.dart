@@ -1,4 +1,4 @@
 
 
 export './index.dart';
-export './modal.dart';
+export './model.dart';
