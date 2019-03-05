@@ -6,6 +6,7 @@ import './basics/index.dart';
 import './about/index.dart';
 import 'package:flutter_doc/models/models.dart';
 import './bloc.dart';
+import 'package:flutter/services.dart';
 class Home extends StatefulWidget{
   HomeState createState()=>new HomeState();
 }
@@ -54,15 +55,17 @@ class HomeState extends State<Home>{
     // TODO: implement build
     _Components _components=_doms();
     EdgeInsets pd=MediaQuery.of(context).padding;
-    return new DefaultTabController(length:_bar.length,
+    SystemUiOverlayStyle systemUiOverlayStyle=SystemUiOverlayStyle.dark;
+    return new AnnotatedRegion(
+      value:systemUiOverlayStyle,
+      child: new DefaultTabController(length:_bar.length,
         child:new Scaffold(
-          body:new TabBarView(children:_components.views),
-          bottomNavigationBar: new Container(
-            color: Theme.of(context).primaryColor,
-            padding: EdgeInsets.only(bottom: pd.bottom),
-            child: new TabBar(tabs:_components.bars),
-          ),
-        ));
+        body:new TabBarView(children:_components.views),
+        bottomNavigationBar: new Container(
+        color: Theme.of(context).primaryColor,
+        padding: EdgeInsets.only(bottom: pd.bottom),
+        child: new TabBar(tabs:_components.bars),
+        ))));
   }
 }
 

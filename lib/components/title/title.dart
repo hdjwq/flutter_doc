@@ -5,7 +5,7 @@ class LabelWidget extends StatelessWidget{
     Key key,
     this.padding=const EdgeInsets.only(left: 15,right: 15,bottom: 12),
     @required this.title,
-    this.textStyle=const TextStyle(fontSize: 20,fontWeight:FontWeight.bold)
+    this.textStyle=const TextStyle(fontSize: 20,fontWeight:FontWeight.bold,color:Colors.black)
    }):assert(padding!=null),assert(textStyle!=null),super(key:key);
   final EdgeInsetsGeometry padding;
   final String title;
@@ -13,7 +13,9 @@ class LabelWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Padding(padding:this.padding,
+    return new Container(
+      padding:this.padding,
+      alignment:Alignment.centerLeft,
       child:new Text(this.title,
         style:this.textStyle
       ),
