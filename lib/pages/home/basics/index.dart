@@ -4,9 +4,7 @@ class BasicsWidget extends StatefulWidget{
   _BasicsState createState()=>new _BasicsState();
 }
 
-class _BasicsState extends State<BasicsWidget> with AutomaticKeepAliveClientMixin{
-  @override
-  bool get wantKeepAlive=>true;
+class _BasicsState extends State<BasicsWidget>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
